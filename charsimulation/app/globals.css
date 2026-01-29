@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --saf-color: #6c639a;
+  --safi-color: #3a2165;
+}
+
+.safi-color { background-color: var(--safi-color); }
+
+.retro-tv-filter {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 10px; }
+}
+
+.retro-tv-filter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+.retro-tv-filter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  filter: blur(0.5px);
+  opacity: 0.1;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.1) 0%,
+    rgba(0, 255, 0, 0.1) 50%,
+    rgba(0, 0, 255, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+body {
+  background: var(--saf-color);
+  color: white;
+  font-family: var(--font-fredoka);
+}
