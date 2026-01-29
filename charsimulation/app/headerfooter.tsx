@@ -1,12 +1,19 @@
 import "./globals.css"
 import { RefreshCcw, Info } from "lucide-react";
 
-function Header() {
+interface HeaderProps {
+    onRedraw: () => void;
+}
+
+function Header({ onRedraw }: HeaderProps) {
     return (
         <header className="fixed top-0 flex items-center justify-between w-full safi-color bg-opacity-90 p-10 z-3">
             <h1 className="left-0 text-2xl">Pet Simulator</h1>
-            <div className="flex items-center space-x-8">   
-                <button className="flex items-center gap-1 rounded hover:scale-120 hover:text-blue-400 transition-all">
+            <div className="flex items-center space-x-8">
+                <button
+                    className="flex items-center gap-1 rounded hover:scale-120 hover:text-blue-400 transition-all"
+                    onClick={onRedraw}
+                >
                     <RefreshCcw size={16} />
                     <span>Redraw</span>
                 </button>
@@ -27,4 +34,4 @@ function Footer() {
     );
 }
 
-export {Header, Footer};
+export { Header, Footer };
