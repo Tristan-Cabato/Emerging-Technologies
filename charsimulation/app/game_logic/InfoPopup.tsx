@@ -26,15 +26,26 @@ export default function InfoPopup({ isOpen, onClose }: InfoPopupProps) {
     const currentInfo = info[currentIndex];
 
     return (
-        <div className="w-[90vw] h-[90vh] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 backdrop-blur flex items-center justify-center z-50 border-2 border-solid rounded-3xl">
-            <div className="relative text-white max-w-4xl mx-4">
-                {/* Close button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 p-2 rounded-full hover:bg-red-500 transition-all"
-                >
-                    <X size={20} />
-                </button>
+        <>
+            {/* Full-screen overlay for outside clicks */}
+            <div 
+                className="fixed inset-0 z-40"
+                onClick={onClose}
+            />
+            
+            {/* Popup content */}
+            <div 
+                className="w-[90vw] h-[90vh] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 backdrop-blur flex items-center justify-center z-50 border-2 border-solid rounded-3xl"
+                onClick={(e) => e.stopPropagation()} // Prevents outside click from closing when clicking popup
+            >
+                <div className="relative text-white max-w-4xl mx-4">
+                    {/* Close button */}
+                    <button
+                        onClick={onClose}
+                        className="absolute top-4 right-4 p-2 rounded-full hover:bg-red-500 transition-all"
+                    >
+                        <X size={20} />
+                    </button>
 
                 {/* Title */}
                 <h2 className="text-3xl font-bold text-center mb-8">{currentInfo.title}</h2>
@@ -81,8 +92,10 @@ export default function InfoPopup({ isOpen, onClose }: InfoPopupProps) {
                     >
                         <ChevronRight size={32} />
                     </button>
+                    <span> Click the 'x' button or outside the popup to close screen</span>
                 </div>
             </div>
         </div>
+        </>
     );
 }

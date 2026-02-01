@@ -116,7 +116,7 @@ function CharacterSelection({ onCharacterCountChange }: { onCharacterCountChange
     }, [draggedChar, dragOffset]);
 
     const randomizeCharacters = () => {
-        const count = Math.floor(Math.random() * chars.length) + 1;
+        const count = Math.floor(Math.random() * Math.min(20, chars.length)) + 1;
         const availableChars = [...chars];
         const selected: CharacterDisplay[] = [];
 
@@ -167,10 +167,42 @@ function CharacterSelection({ onCharacterCountChange }: { onCharacterCountChange
         );
     };
 
+    const moveCharacter = (charId: string) => {
+        setDisplayedChars(prevChars =>
+            prevChars.map(char => {
+                if (char.id !== charId || char.isDragging) return char;
+                
+                const deltaX = (Math.random() - 0.5) * 600;
+                const deltaY = (Math.random() - 0.5) * 600;
+
+                const newX = Math.max(-180, Math.min(180, char.x + deltaX));
+                const newY = Math.max(-180, Math.min(180, char.y + deltaY));
+
+                return {
+                    ...char,
+                    x: newX,
+                    y: newY
+                };
+            })
+        );
+    };
+
     useEffect(() => {
-        const interval = setInterval(moveCharacters, 1200);
-        return () => clearInterval(interval);
-    }, []);
+        const intervals: NodeJS.Timeout[] = [];
+        
+        displayedChars.forEach((char) => {
+            // (800ms - 2000ms)
+            const interval = Math.random() * 1200 + 800;
+            
+            const timer = setInterval(() => {
+                moveCharacter(char.id);
+            }, interval);
+            
+            intervals.push(timer);
+        });
+        
+        return () => intervals.forEach(clearInterval);
+    }, [displayedChars.length]);
 
     return (
         <div className="fixed inset-0 flex items-center justify-center">

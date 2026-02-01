@@ -8,7 +8,7 @@ const info: Info[] = [
     {
         title: "Character Logic",
         image: "/resources/CharacterMovement.png",
-        description: "Every 1200 milliseconds, a randomized vertical and horizontal step is added to the current position of a character, then limited to the boundary."
+        description: "On refresh or redraw, a random amount of characters (limited to 20) is displayed. Every 800-1200 milliseconds (character gets randomized speed value on initialization), a randomized vertical and horizontal step is added to the current position of a character, then limited to the boundary."
     },
     {
         title: "Navigation Bar",

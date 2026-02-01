@@ -38,7 +38,7 @@ function Footer({ characterCount }: FooterProps) {
     return (
         <footer className="fixed bottom-0 flex items-center justify-between w-full safi-color p-10 z-3">
             <div> Characters on screen: <span id="charCount">{characterCount}</span> </div>
-            <a href="https://github.com/Tristan-Cabato/Emerging-Technologies/tree/main/charsimulation" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:font-bold hover:text-purple-500 transition-all flex items-center gap-1">
+            <a href="https://vercel.com/safirezs-projects/emerging-technologies" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:font-bold hover:text-purple-500 transition-all flex items-center gap-1">
                 <Triangle size={16} />
                 Vercel Repository
             </a>
