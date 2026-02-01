@@ -116,7 +116,7 @@ function CharacterSelection({ onCharacterCountChange }: { onCharacterCountChange
     }, [draggedChar, dragOffset]);
 
     const randomizeCharacters = () => {
-        const count = Math.floor(Math.random() * Math.min(20, chars.length)) + 1;
+        const count = Math.floor(Math.random() * Math.min(11, chars.length)) + 1;
         const availableChars = [...chars];
         const selected: CharacterDisplay[] = [];
 
