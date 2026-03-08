@@ -20,6 +20,7 @@ export const authOptions = {
 
     emailAndPassword: {
         enabled: true,
+        requireEmailVerification: false,
     },
     
     plugins: [
@@ -27,7 +28,8 @@ export const authOptions = {
     ],
                    
     secret: process.env.BETTER_AUTH_SECRET,
-    baseURL: process.env.BETTER_AUTH_URL
+    baseURL: process.env.BETTER_AUTH_URL,
+    trustedOrigins: ["https://authenticationapp-vert.vercel.app"]
 } satisfies BetterAuthOptions;
 
 export const auth = betterAuth(authOptions);
