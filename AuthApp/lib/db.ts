@@ -1,14 +1,21 @@
 import { Pool, PoolClient, QueryResultRow, QueryResult } from 'pg';
 
 const globalForPool = global as unknown as { pool: Pool };
+// From env.local
+const DB_HOST="aws-1-ap-northeast-1.pooler.supabase.com";
+const DB_PORT=5432;
+const DB_USER="postgres.cxfeiqpcxczeogparwhc";
+const DB_PASSWORD="touhoumygoat";
+const DB_NAME="postgres";
+const DATABASE_URL="postgresql://postgres:touhoumygoat@db.cxfeiqpcxczeogparwhc.supabase.co:5432/postgres";
 
 export const pool = globalForPool.pool || new Pool({
-  connectionString: process.env.DATABASE_URL,
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  connectionString: DATABASE_URL,
+  host: DB_HOST,
+  port: DB_PORT,
+  user: DB_USER,
+  password: DB_PASSWORD,
+  database: DB_NAME,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
