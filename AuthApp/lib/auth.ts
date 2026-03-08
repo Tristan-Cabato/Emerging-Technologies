@@ -14,12 +14,19 @@ export const authOptions = {
             },
         },
     },
-    session: { modelName: "sessions" },
+    session: { 
+        modelName: "sessions",
+        cookieCache: {
+            enabled: true,
+            maxAge: 5 * 60, // 5 minutes
+        },
+    },
     account: { modelName: "accounts" },
     verification: { modelName: "verifications" },
 
     emailAndPassword: {
         enabled: true,
+        requireEmailVerification: false,
     },
     
     plugins: [
@@ -27,10 +34,12 @@ export const authOptions = {
     ],
                    
     secret: process.env.BETTER_AUTH_SECRET,
-    baseURL: process.env.BETTER_AUTH_URL
+    baseURL: process.env.BETTER_AUTH_URL,
+    
+    // Production-specific settings
+    trustedOrigins: ["https://authenticationapp-vert.vercel.app"],
 } satisfies BetterAuthOptions;
 
 export const auth = betterAuth(authOptions);
 
 export type Auth = typeof auth;
-export type AuthOptions = typeof authOptions;
