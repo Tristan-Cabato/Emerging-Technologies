@@ -103,8 +103,8 @@ export default function Page() {
     <PageGuardWrapper requiredRoles={["ADMINISTRATOR", "ROLES_CANACCESSROLES"]}>
     <div className="space-y-4">
       {/* Header & Controls */}
-      <div className="flex items-center justify-between gap-x-6 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-        <h1 className="text-xl font-bold text-gray-900 whitespace-nowrap">
+      <div className="flex items-center justify-between gap-x-6 bg-zinc-400 p-4 rounded-lg shadow-sm border border-gray-100">
+        <h1 className="text-xl font-bold text-white whitespace-nowrap">
           Role Management
         </h1>
 
@@ -176,31 +176,31 @@ export default function Page() {
       </ButtonGuardWrapper>
 
       {/* Table */}
-      <div className="max-h-[calc(100vh-260px)] overflow-auto rounded border bg-white shadow">
-          <table className="min-w-full divide-y divide-gray-200">
+      <div className="max-h-[calc(100vh-260px)] overflow-auto rounded border bg-zinc-600 shadow">
+          <table className="min-w-full divide-y divide-gray-500 bg-zinc-600">
             <thead className="bg-gray-200">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase  tracking-wider text-white">
                   Row #
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Name
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Description
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 print:hidden">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white print:hidden">
                   Actions
                 </th>
               </tr>
             </thead>
 
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-zinc-600 divide-y divide-gray-200">
               {filteredRoles.map((role, index) => (
-                <tr key={role.id} className="even:bg-gray-50/80 hover:bg-blue-50/50 transition-colors">
-                  <td className="px-4 py-2 text-sm">{index + 1}</td>
-                  <td className="px-4 py-2 text-sm">{role.id}</td>
-                  <td className="px-4 py-2 text-sm">{role.description}</td>
+                <tr key={role.id} className="even:bg-zinc-700/50 hover:bg-zinc-400/50 transition-colors">
+                  <td className="px-4 py-2 text-sm text-white">{index + 1}</td>
+                  <td className="px-4 py-2 text-sm text-white">{role.id}</td>
+                  <td className="px-4 py-2 text-sm text-white">{role.description}</td>
                   <td className="px-6 py-2 text-sm space-x-4 print:hidden">
                     <ButtonGuardWrapper requiredRoles={["ADMINISTRATOR", "ROLES_CANEDITROLES"]}>
                       <button

@@ -99,11 +99,11 @@ export default function AddUserModal({ isOpen, onClose, onAdd }: AddUserModalPro
       <div
         ref={modalRef}
         style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-        className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden"
+        className="w-full max-w-md bg-zinc-400 rounded-lg shadow-xl overflow-hidden"
       >
         {/* Header - Blue for Add */}
         <div 
-          className="flex items-center justify-between bg-blue-600 px-4 py-3 text-white cursor-move select-none"
+          className="flex items-center justify-between bg-zinc-600 px-4 py-3 text-white cursor-move select-none"
           onMouseDown={onMouseDown}
         >
           <div className="flex items-center gap-2">
@@ -121,67 +121,67 @@ export default function AddUserModal({ isOpen, onClose, onAdd }: AddUserModalPro
         {/* Body */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-white mb-1">
               Email <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+              className="w-full rounded-md border border-zinc-300 bg-zinc-500 px-3 py-2 text-sm text-white focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 outline-none"
               placeholder="user@example.com"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-white mb-1">
               Name (Username) <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+              className="w-full rounded-md border border-zinc-300 bg-zinc-500 px-3 py-2 text-sm text-white focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 outline-none"
               placeholder="jdoe"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-white mb-1">
               Full Name
             </label>
             <input
               type="text"
               value={fullname}
               onChange={(e) => setFullname(e.target.value)}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+              className="w-full rounded-md border border-zinc-300 bg-zinc-500 px-3 py-2 text-sm text-white focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 outline-none"
               placeholder="John Doe"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-white mb-1">
                 Birthdate
               </label>
               <input
                 type="date"
                 value={birthdate}
                 onChange={(e) => setBirthdate(e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                className="w-full rounded-md border border-zinc-300 bg-zinc-500 px-3 py-2 text-sm text-white focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 outline-none"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-white mb-1">
                 Gender
               </label>
               <select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                className="w-full rounded-md border border-zinc-300 bg-zinc-500 px-3 py-2 text-sm text-white focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 outline-none"
               >
                 <option value="">Select...</option>
                 <option value="Male">Male</option>

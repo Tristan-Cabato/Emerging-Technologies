@@ -22,6 +22,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Error is also referencing this line
   return (
     <html lang="en">
       <body

@@ -72,17 +72,17 @@ export default function LoginPage() {
     };
     
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4 font-sans text-gray-900">
-            <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg border border-gray-100">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-[url('https://img.itch.zone/aW1hZ2UvMTY1MjM4MC85NzIxODE4LmdpZg==/original/iLZyQY.gif')] bg-no-repeat bg-cover p-4 font-sans text-gray-900">
+            <div className="w-full max-w-md p-8 space-y-6 bg-zinc-400 rounded-xl shadow-lg border border-black text-white">
                 <div className="text-center">
-                    <h1 className="text-3xl font-bold tracking-tight">BasicApp</h1>
-                    <p className="text-gray-500 mt-2">Sign in to your account</p>
+                    <h1 className="text-3xl font-bold tracking-tight">Authentication App</h1>
+                    <p className="mt-2">Please Sign in to your account</p>
                 </div>
 
                 <div className="space-y-4">
                     {/* Email */}
                     <div className="space-y-1">
-                        <label className="text-xs font-semibold text-gray-600 ml-1">Email</label>
+                        <label className="text-xs font-semibold ml-1">Email</label>
                         <input 
                             ref={emailRef}
                             autoFocus
@@ -102,7 +102,7 @@ export default function LoginPage() {
 
                     {/* Password */}
                     <div className="space-y-1">
-                        <label className="text-xs font-semibold text-gray-600 ml-1">Password</label>
+                        <label className="text-xs font-semibold ml-1">Password</label>
                         <div className="relative">
                             <input 
                                 ref={passwordRef}

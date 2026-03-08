@@ -1,9 +1,9 @@
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import StagesSelector from "@/components/StagesSelector";
+import Leaderboard from "@/components/Leaderboard";
 
-export default async function Page() {
+export default async function LeaderboardPage() {
     const session = await auth.api.getSession({
         headers: await headers()
     });
@@ -11,9 +11,10 @@ export default async function Page() {
     if (!session) {
         redirect("/");
     }
-  return (
-    <div className="min-h-screen p-8 bg-zinc-500">
-      <StagesSelector />
-    </div>
-  );
+
+    return (
+        <div className="min-h-screen p-8">
+            <Leaderboard />
+        </div>
+    );
 }

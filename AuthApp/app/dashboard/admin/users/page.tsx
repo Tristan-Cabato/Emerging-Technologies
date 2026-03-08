@@ -136,8 +136,8 @@ export default function Page() {
     <PageGuardWrapper requiredRoles={["ADMINISTRATOR", "USERS_CANACCESSUSERS"]}>
     <div className="space-y-4">
       {/* Header & Controls */}
-      <div className="flex items-center justify-between gap-x-6 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-        <h1 className="text-xl font-bold text-gray-900 whitespace-nowrap">
+      <div className="flex items-center justify-between gap-x-6 bg-zinc-400 p-4 rounded-lg shadow-sm border border-gray-100">
+        <h1 className="text-xl font-bold text-white whitespace-nowrap">
           User Management
         </h1>
 
@@ -209,50 +209,50 @@ export default function Page() {
 
       {/* Table */}
       <>
-        <div className="max-h-[calc(100vh-260px)] overflow-auto rounded border bg-white shadow relative">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-200 sticky top-0 z-20">
+        <div className="max-h-[calc(100vh-260px)] overflow-auto rounded border bg-zinc-400 shadow relative">
+          <table className="min-w-full divide-y divide-zinc-300">
+            <thead className="bg-zinc-600 sticky top-0 z-20">
               <tr>
                 {/* Frozen Columns */}
-                <th className="sticky left-0 z-20 bg-gray-200 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] w-16">
+                <th className="sticky left-0 z-20 bg-zinc-600 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] w-16">
                   Row #
                 </th>
-                <th className="sticky left-16 z-20 bg-gray-200 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] min-w-[220px]">
+                <th className="sticky left-16 z-20 bg-zinc-600 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] min-w-[220px]">
                   Email
                 </th>
                 {/* Scrollable Columns */}
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Active
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Name
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Full Name
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Birthdate
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Gender
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white">
                   Status Action
                 </th>
-                <th className="sticky right-0 z-20 bg-gray-200 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.1)]">
+                <th className="sticky right-0 z-20 bg-zinc-600 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.1)]">
                   Actions
                 </th>
               </tr>
             </thead>
 
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-zinc-500 divide-y divide-zinc-300">
               {filteredUsers.map((user, index) => (
-                <tr key={user.id} className="group even:bg-gray-50/80 hover:bg-blue-50/50 transition-colors">
+                <tr key={user.id} className="group even:bg-zinc-600/50 hover:bg-zinc-400/50 transition-colors">
                   {/* Frozen Columns */}
-                  <td className="sticky left-0 z-10 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] group-hover:bg-blue-50/50 w-16">
+                  <td className="sticky left-0 z-10 bg-zinc-500 px-4 py-2 text-sm font-medium text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] group-hover:bg-zinc-400/50 w-16">
                     {index + 1}
                   </td>
-                  <td className="sticky left-16 z-10 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] group-hover:bg-blue-50/50 min-w-[220px]">
+                  <td className="sticky left-16 z-10 bg-zinc-500 px-4 py-2 text-sm font-medium text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] group-hover:bg-zinc-400/50 min-w-[220px]">
                     {user.email}
                   </td>
                   {/* Scrollable Columns */}
@@ -264,12 +264,12 @@ export default function Page() {
                       className="h-4 w-4 rounded border-gray-300 text-green-600"
                     />
                   </td>
-                  <td className="px-4 py-2 text-sm text-gray-500">{user.name}</td>
-                  <td className="px-4 py-2 text-sm text-gray-500">{user.fullname || "-"}</td>
-                  <td className="px-4 py-2 text-sm text-gray-500">
+                  <td className="px-4 py-2 text-sm text-white">{user.name}</td>
+                  <td className="px-4 py-2 text-sm text-white">{user.fullname || "-"}</td>
+                  <td className="px-4 py-2 text-sm text-white">
                     {user.birthdate ? new Date(user.birthdate).toLocaleDateString() : "-"}
                   </td>
-                  <td className="px-4 py-2 text-sm text-gray-500">{user.gender || "-"}</td>
+                  <td className="px-4 py-2 text-sm text-white">{user.gender || "-"}</td>
                   <td className="px-4 py-2 text-sm">
                     <ButtonGuardWrapper requiredRoles={['ADMINISTRATOR', 'USERS_CANACTIVATEUSERS']}>
                         <button 
@@ -284,7 +284,7 @@ export default function Page() {
                         </button>
                     </ButtonGuardWrapper>
                   </td>
-                  <td className="sticky right-0 z-10 bg-white px-6 py-2 text-sm space-x-2 whitespace-nowrap shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.1)]">
+                  <td className="sticky right-0 z-10 bg-zinc-500 px-6 py-2 text-sm space-x-2 whitespace-nowrap shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.1)]">
                      <ButtonGuardWrapper requiredRoles={['ADMINISTRATOR', 'USERS_CANEDITUSERS']}>
                         <button 
                             onClick={() => setUserToEdit(user)}
