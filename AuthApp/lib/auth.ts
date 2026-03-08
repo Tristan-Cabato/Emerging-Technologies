@@ -25,7 +25,7 @@ export const authOptions = {
     ],
                    
     secret: process.env.BETTER_AUTH_SECRET,
-    baseURL: process.env.BETTER_AUTH_URL || process.env.VERCEL_URL
+    baseURL: process.env.VERCEL_URL || process.env.BETTER_AUTH_URL
 } satisfies BetterAuthOptions;
 
 export const auth = betterAuth(authOptions);
