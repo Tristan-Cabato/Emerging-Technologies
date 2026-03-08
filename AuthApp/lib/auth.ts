@@ -4,8 +4,6 @@ import { pool } from "./db";
 
 export const authOptions = {
     database: pool,
-    // We explicitly map the plural names at the top level.
-    // This is the supported way to handle plural tables in v1.4.9.
     user: { 
         modelName: "users",
         additionalFields: {
@@ -20,7 +18,6 @@ export const authOptions = {
 
     emailAndPassword: {
         enabled: true,
-        requireEmailVerification: false,
     },
     
     plugins: [
