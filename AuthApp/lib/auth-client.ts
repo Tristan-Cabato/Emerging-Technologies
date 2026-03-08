@@ -4,7 +4,7 @@ import { inferAdditionalFields } from "better-auth/client/plugins";
 import type { AuthOptions } from "./auth";
 
 export const authClient = createAuthClient({
-    baseURL: process.env.NEXT_PUBLIC_APP_URL || "https://authenticationapp-vert.vercel.app",
+    baseURL: typeof window !== "undefined" ? window.location.origin : process.env.NEXT_PUBLIC_APP_URL || "https://authenticationapp-vert.vercel.app",
     plugins: [
         inferAdditionalFields<AuthOptions>()
     ]
